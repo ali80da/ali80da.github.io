@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali Darehshori - Software Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9fafb;
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 1rem;
+    }
+    .skill-card {
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+    }
+    .project-card {
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+    }
+    .project-card a {
+      color: #3b82f6;
+      text-decoration: none;
+    }
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+    .contact-link {
+      color: #3b82f6;
+      text-decoration: none;
+      margin-right: 0.5rem;
+    }
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4">
+  <div class="max-w-4xl w-full">
+    <!-- Header Section -->
+    <header class="text-center mb-8">
+      <img src="https://avatars.githubusercontent.com/u/ali80da" alt="Profile Picture" class="profile-img mx-auto mb-4">
+      <h1 class="text-3xl font-bold text-gray-900">Ali Darehshori</h1>
+      <p class="text-lg text-gray-600">Software Developer | Passionate about Clean and Scalable Systems</p>
+      <p class="text-gray-500 mt-2">All Focus is on Building Something NEW</p>
+    </header>
+
+    <!-- About Section -->
+    <section class="mb-8">
+      <h2 class="section-title">About Me</h2>
+      <p class="text-gray-700">
+        Developing and designing scalable software with .NET. Passionate about clean, stable, and extensible systems. A fan of Linux and open-source culture 🐧
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="mb-8">
+      <h2 class="section-title">Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="skill-card">
+          <h3 class="font-semibold text-gray-800">Backend</h3>
+          <p class="text-gray-600">.NET 8, ASP.NET Core, EF Core, RESTful APIs, Clean Architecture</p>
+        </div>
+        <div class="skill-card">
+          <h3 class="font-semibold text-gray-800">Front/Mobile</h3>
+          <p class="text-gray-600">Blazor, .NET MAUI, HTML/JS, Tailwind, MudBlazor</p>
+        </div>
+        <div class="skill-card">
+          <h3 class="font-semibold text-gray-800">DevOps</h3>
+          <p class="text-gray-600">Docker, Nginx, CI/CD, GitHub Actions</p>
+        </div>
+        <div class="skill-card">
+          <h3 class="font-semibold text-gray-800">Database</h3>
+          <p class="text-gray-600">SQL Server, PostgreSQL, SQLite, Dapper</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="mb-8">
+      <h2 class="section-title">Projects</h2>
+      <div class="grid grid-cols-1 gap-4">
+        <div class="project-card">
+          <h3 class="font-semibold text-gray-800">Secure Server Communication over SSL in Docker</h3>
+          <p class="text-gray-600">Establish secure API-to-client communication using SSL in Docker</p>
+          <a href="https://github.com/ali80da/secure-server-communication-over-ssl-in-docker" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3 class="font-semibold text-gray-800">Email Setup with Cloudflare</h3>
+          <p class="text-gray-600">A complete guide to setting up email on cPanel hosts with DNS managed via Cloudflare</p>
+          <a href="https://github.com/ali80da/outlook-email-with-cloudflare" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3 class="font-semibold text-gray-800">Dev Tricks</h3>
+          <p class="text-gray-600">Tricks for designing and developing programs with C# and .NET</p>
+          <a href="https://github.com/ali80da/dev-tricks" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3 class="font-semibold text-gray-800">Advance Code</h3>
+          <p class="text-gray-600">A project for advanced coding with HTML</p>
+          <a href="https://github.com/ali80da/advance-code" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3 class="font-semibold text-gray-800">Customize Scalar</h3>
+          <p class="text-gray-600">Personalizing API usage display in .NET 9.0 and above using Scalar</p>
+          <a href="https://github.com/ali80da/customize-scalar" target="_blank">View on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="mb-8">
+      <h2 class="section-title">Contact Me</h2>
+      <p class="text-gray-700">
+        For collaboration or inquiries, feel free to reach out via the links below:
+      </p>
+      <div class="flex space-x-4 mt-4">
+        <a href="https://github.com/ali80da" target="_blank" class="contact-link">GitHub</a>
+        <a href="https://www.linkedin.com/in/ali-darehshori" target="_blank" class="contact-link">LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 mt-8">
+      <p>🎉 Let's make the software world better together! 🎉</p>
+      <p>© 2025 Ali Darehshori</p>
+    </footer>
+  </div>
+</body>
+</html>
