@@ -1,148 +1,730 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ali Darehshori - Software Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!--
+    Ali Darehshori — Ultimate Dark Dev Portfolio
+    Built for GitHub Pages: single-file, CDN-only, no build step.
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ali Darehshori — Software Developer Portfolio: .NET, Linux, open-source." />
+  <meta name="theme-color" content="#060606" />
+  <title>Ali Darehshori — Software Developer</title>
+
+  <!-- Tailwind 2 (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.16.0/devicon.min.css" rel="stylesheet" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Ali Darehshori — Software Developer" />
+  <meta property="og:description" content="Crafting scalable systems with .NET & open-source spirit." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/37948611?v=4" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f9fafb;
+    /* ===================== DARK • ULTIMATE DEVELOPER SHOWCASE ===================== */
+    :root { color-scheme: dark; }
+    :root{
+      --bg0:#060606; --bg1:#0b0c0d; --bg2:#111315; --ink:#f5f7ff; --ink2:#cfd3dd; --ink3:#9aa0aa;
+      --p1:#7c3aed; --p2:#22d3ee; --p3:#06b6d4; --hot:#ff2d55; --lime:#a3e635;
+      --r-sm:.75rem; --r-md:1.1rem; --r-lg:2rem; --glass: blur(18px) saturate(115%);
+      --shadow-deep:0 30px 120px rgba(0,0,0,.55); --shadow-soft:0 12px 40px rgba(0,0,0,.4);
+      --ring: 0 0 0 1px rgba(255,255,255,.12);
     }
-    .profile-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
+
+    html,body{height:100%}
+    body{
+      font-family:'Fira Code',monospace; margin:0; line-height:1.7; overflow-x:hidden;
+      background:
+        radial-gradient(1200px 700px at 20% -20%, rgba(124,58,237,.10), transparent 45%),
+        radial-gradient(1000px 800px at 95% 0%, rgba(34,211,238,.10), transparent 48%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      color:var(--ink); scroll-behavior:smooth;
     }
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #1f2937;
-      margin-bottom: 1rem;
-    }
-    .skill-card {
-      background-color: #ffffff;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1rem;
-    }
-    .project-card {
-      background-color: #ffffff;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1rem;
-    }
-    .project-card a {
-      color: #3b82f6;
-      text-decoration: none;
-    }
-    .project-card a:hover {
-      text-decoration: underline;
-    }
-    .contact-link {
-      color: #3b82f6;
-      text-decoration: none;
-      margin-right: 0.5rem;
-    }
-    .contact-link:hover {
-      text-decoration: underline;
-    }
+
+    /* Fluid type */
+    h1{font-size:clamp(2rem, 4vw + 1rem, 3.5rem)}
+    h2.section-title{font-size:clamp(1.6rem, 2.2vw + 1rem, 2.4rem)}
+
+    /* BG FX */
+    .grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.22;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size:40px 40px}
+    .aurora{position:fixed;inset:-20%;z-index:0;pointer-events:none;filter:blur(70px);opacity:.34;mix-blend-mode:screen;
+      background:conic-gradient(from 90deg, rgba(124,58,237,.55), rgba(34,211,238,.55), rgba(124,58,237,.55));
+      animation:aurora 20s linear infinite alternate}
+    @keyframes aurora{0%{transform:translate(-6%,-4%) rotate(0deg)}100%{transform:translate(6%,4%) rotate(25deg)}}
+
+    /* Section */
+    .section{max-width:1280px;margin:0 auto;padding:4rem 1.25rem;position:relative;z-index:1}
+    .section + .section{margin-top:1rem}
+    .section-title{font-weight:800;display:inline-block;position:relative;letter-spacing:.02em}
+    .section-title:after{content:"";position:absolute;left:0;bottom:-10px;width:200px;height:3px;border-radius:6px;background:linear-gradient(90deg,var(--p1),var(--p2));opacity:.7}
+
+    /* Navbar */
+    .navbar{position:sticky;top:0;z-index:1002;background:rgba(6,6,6,.82);backdrop-filter:var(--glass);-webkit-backdrop-filter:var(--glass);border-bottom:1px solid rgba(255,255,255,.08);transition:box-shadow .25s ease}
+    .navbar.scrolled{box-shadow:var(--shadow-soft)}
+    .nav-link{color:var(--ink3);padding:.6rem .9rem;border-radius:.7rem;transition:transform .2s ease, background .2s ease, color .2s ease}
+    .nav-link:hover,.nav-link:focus{color:var(--ink);background:rgba(255,255,255,.06);transform:translateY(-1px)}
+    .nav-link[aria-current="true"]{background:linear-gradient(90deg, rgba(124,58,237,.22), rgba(34,211,238,.22)); color:var(--ink)}
+
+    /* Progress + back to top */
+    .scroll-progress{position:fixed;top:0;left:0;height:4px;width:0;background:linear-gradient(90deg,var(--p1),var(--p2));z-index:1003;box-shadow:0 0 12px rgba(255,255,255,.08)}
+    .back-to-top{position:fixed;right:1.25rem;bottom:1.25rem;display:none;z-index:1003;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.05);color:var(--ink2);padding:.6rem .8rem}
+    .back-to-top:hover{background:rgba(255,255,255,.1);color:var(--ink)}
+
+    /* Hero */
+    .hero{position:relative;margin:3rem 1.25rem;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-deep)}
+    .hero-media{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;filter:saturate(95%)}
+    .hero-overlay{position:absolute;inset:0;background:radial-gradient(120% 100% at 50% 0%, rgba(0,0,0,.7) 30%, rgba(0,0,0,.92) 80%);z-index:1}
+    .hero-content{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+    .profile{width:188px;height:188px;border-radius:50%;border:1px solid rgba(255,255,255,.12);object-fit:cover;box-shadow:var(--shadow-soft);transition:transform .25s ease, box-shadow .25s ease}
+    .profile:hover{transform:translateY(-3px); box-shadow:0 30px 80px rgba(0,0,0,.5)}
+    .typing{font-size:clamp(1rem, 1.2vw + .6rem, 1.25rem);border-right:.14em solid var(--ink3);min-height:1.6em;white-space:nowrap}
+
+    /* Marquee & Badges */
+    .marquee{overflow:hidden;mask-image:linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent)}
+    .marquee-track{display:inline-flex;gap:.6rem;min-width:200%;animation:marq 22s linear infinite}
+    @keyframes marq{to{transform:translateX(-50%)}}
+    .badge{display:inline-flex;align-items:center;gap:.45rem;padding:.45rem .75rem;border:1px solid rgba(255,255,255,.12);border-radius:999px;background:rgba(255,255,255,.04);color:var(--ink2);white-space:nowrap}
+
+    /* Glass Cards */
+    .card{position:relative;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.10);border-radius:var(--r-md);padding:1.7rem;box-shadow:var(--shadow-soft);overflow:hidden}
+    .card:before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:linear-gradient(140deg, rgba(124,58,237,.45), rgba(34,211,238,.40), rgba(255,255,255,.08));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.4;pointer-events:none}
+    .card:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg, transparent 0, rgba(255,255,255,.08) 15%, transparent 45%);transform:translateX(-120%);transition:transform .55s ease;pointer-events:none}
+    .card:hover:after{transform:translateX(120%)}
+
+    .tilt{transform-style:preserve-3d;transition:transform .18s ease, box-shadow .18s ease; will-change: transform}
+    .tilt:hover{box-shadow:0 30px 90px rgba(0,0,0,.45)}
+
+    .btn-neon{display:inline-block;min-width:168px;text-align:center;font-weight:700;color:var(--ink);text-decoration:none;padding:.92rem 1.7rem;border-radius:var(--r-sm);border:1px solid rgba(255,255,255,.12);background:linear-gradient(100deg, rgba(124,58,237,.35), rgba(34,211,238,.35)); position:relative;overflow:hidden}
+    .btn-neon:before{content:"";position:absolute;inset:-1px;background:linear-gradient(90deg, rgba(255,255,255,.18), transparent 40%, transparent 60%, rgba(255,255,255,.18));transform:translateX(-120%);transition:transform .6s ease}
+    .btn-neon:hover:before{transform:translateX(120%)}
+
+    /* Terminal */
+    .terminal{font-size:.95rem; color:var(--ink2); background:rgba(0,0,0,.6); border:1px solid rgba(255,255,255,.08); border-radius:var(--r-md); box-shadow:var(--shadow-soft); overflow:hidden}
+    .terminal .bar{display:flex; align-items:center; gap:.5rem; padding:.5rem .75rem; background:rgba(255,255,255,.04); border-bottom:1px solid rgba(255,255,255,.08)}
+    .dot{width:.7rem; height:.7rem; border-radius:999px; display:inline-block}
+    .dot.red{background:#ff5f56} .dot.yellow{background:#ffbd2e} .dot.green{background:#27c93f}
+    .terminal .body{padding:1rem 1rem 1.2rem 1rem; line-height:1.6}
+    .prompt{color:#7ee787}
+
+    /* Stack icons */
+    .stack-icon{font-size:2rem; color:#cfd3dd; transition:transform .25s ease, filter .25s ease}
+    .stack-icon:hover{transform:translateY(-4px); filter:drop-shadow(0 6px 20px rgba(124,58,237,.35))}
+
+    /* Code Showcase */
+    .code-card{position:relative; background:#0a0b0c; border:1px solid rgba(255,255,255,.08); border-radius:var(--r-md); box-shadow:var(--shadow-soft); overflow:hidden}
+    .code-header{display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.08)}
+    .code-tabs{display:flex;gap:.35rem}
+    .code-tab{padding:.35rem .6rem;border-radius:.5rem;color:var(--ink3);border:1px solid transparent}
+    .code-tab[aria-selected="true"]{color:var(--ink); background:rgba(124,58,237,.2); border-color:rgba(255,255,255,.12)}
+    .copy-btn{padding:.35rem .6rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:var(--ink2)}
+    pre{margin:0; overflow:auto; padding:1rem}
+    code{font-family:'Fira Code',monospace; font-size:.93rem; color:#e5e7eb}
+    .token.keyword{color:#93c5fd} .token.fn{color:#a78bfa} .token.str{color:#34d399} .token.num{color:#fca5a5} .token.type{color:#60a5fa} .token.com{color:#6b7280} .token.attr{color:#fde68a} .token.prop{color:#f9a8d4}
+
+    /* Timeline */
+    .timeline{position:relative; padding-left:1.25rem}
+    .timeline:before{content:""; position:absolute; left:.45rem; top:.4rem; bottom:.4rem; width:2px; background:linear-gradient(var(--p1), var(--p2))}
+    .tl-item{position:relative; margin:1rem 0 1.5rem 0; padding-left:1rem}
+    .tl-item:before{content:""; position:absolute; left:-.1rem; top:.25rem; width:.8rem; height:.8rem; border-radius:999px; background:linear-gradient(180deg,var(--p1),var(--p2)); box-shadow:0 0 0 3px rgba(255,255,255,.06)}
+
+    /* Chips & Filters */
+    .chips{display:flex; flex-wrap:wrap; gap:.5rem}
+    .chip{padding:.35rem .7rem; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:var(--ink2); cursor:pointer; user-select:none}
+    .chip.active{background:linear-gradient(120deg, rgba(124,58,237,.25), rgba(34,211,238,.25)); color:var(--ink)}
+    .search{width:100%; max-width:560px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.12); color:var(--ink); padding:.7rem .9rem; border-radius:.7rem}
+
+    /* Counters */
+    .counter{font-weight:800; font-size:clamp(1.6rem, 2.6vw + .8rem, 2.6rem)}
+    .counter-sub{color:var(--ink3); font-size:.95rem}
+
+    /* Command Palette */
+    .cmdk{position:fixed; inset:0; display:none; align-items:flex-start; justify-content:center; padding-top:10vh; background:rgba(0,0,0,.55); backdrop-filter:blur(6px); z-index:1005}
+    .cmdk.open{display:flex}
+    .cmdk-panel{width:min(720px, 92vw); background:rgba(10,10,10,.92); border:1px solid rgba(255,255,255,.12); border-radius:1rem; box-shadow:var(--shadow-deep)}
+    .cmdk-search{width:100%; background:transparent; padding:1rem 1.25rem; border:none; outline:none; color:var(--ink); font-size:1rem}
+    .cmdk-list{max-height:50vh; overflow:auto; border-top:1px solid rgba(255,255,255,.08)}
+    .cmdk-item{display:flex; align-items:center; justify-content:space-between; padding:.75rem 1.25rem; cursor:pointer; color:var(--ink2)}
+    .cmdk-item:hover{background:rgba(255,255,255,.06); color:var(--ink)}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .48s ease, transform .48s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* Skeleton */
+    .skeleton{position:relative; overflow:hidden; background:rgba(255,255,255,.06)}
+    .skeleton:after{content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent); transform:translateX(-100%); animation:shimmer 1.2s infinite}
+    @keyframes shimmer{to{transform:translateX(100%)}}
+
+    /* Particles */
+    #fx-canvas{position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.35; mix-blend-mode:screen}
+
+    /* Mobile nav */
+    @media (max-width: 768px){ .md\:hidden{display:block} #navbar-menu.hidden{display:none} }
   </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-4">
-  <div class="max-w-4xl w-full">
-    <!-- Header Section -->
-    <header class="text-center mb-8">
-      <img src="https://avatars.githubusercontent.com/u/ali80da" alt="Profile Picture" class="profile-img mx-auto mb-4">
-      <h1 class="text-3xl font-bold text-gray-900">Ali Darehshori</h1>
-      <p class="text-lg text-gray-600">Software Developer | Passionate about Clean and Scalable Systems</p>
-      <p class="text-gray-500 mt-2">All Focus is on Building Something NEW</p>
-    </header>
+<body>
+  <noscript>
+    <div style="max-width:680px;margin:1rem auto;padding:.75rem 1rem;border:1px solid rgba(255,255,255,.2);border-radius:12px;color:#fff;background:#111">
+      JavaScript is disabled. This site includes animations & interactions; basic content still visible.
+    </div>
+  </noscript>
 
-    <!-- About Section -->
-    <section class="mb-8">
-      <h2 class="section-title">About Me</h2>
-      <p class="text-gray-700">
-        Developing and designing scalable software with .NET. Passionate about clean, stable, and extensible systems. A fan of Linux and open-source culture 🐧
+  <!-- Background FX layers -->
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true"></div>
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="scroll-progress" role="progressbar" aria-label="Scroll progress"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-5 py-3 flex-wrap">
+      <a href="#" class="text-white font-bold text-xl">Ali Darehshori</a>
+      <button class="md:hidden text-white text-2xl" id="navbar-toggle" aria-expanded="false" aria-controls="navbar-menu" aria-label="Toggle navigation"><i class="fa-solid fa-bars"></i></button>
+      <div class="w-full md:w-auto md:flex items-center space-x-1 hidden md:block" id="navbar-menu" role="menubar">
+        <a href="#about" class="nav-link block" role="menuitem" data-spy>About</a>
+        <a href="#stack" class="nav-link block" role="menuitem" data-spy>Stack</a>
+        <a href="#skills" class="nav-link block" role="menuitem" data-spy>Skills</a>
+        <a href="#projects" class="nav-link block" role="menuitem" data-spy>Projects</a>
+        <a href="#code" class="nav-link block" role="menuitem" data-spy>Code</a>
+        <a href="#cases" class="nav-link block" role="menuitem" data-spy>Case Studies</a>
+        <a href="#achievements" class="nav-link block" role="menuitem" data-spy>Achievements</a>
+        <a href="#contact" class="nav-link block" role="menuitem" data-spy>Contact</a>
+        <a href="https://github.com/ali80da" target="_blank" rel="noopener" class="ml-1 btn-neon">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" aria-label="Introduction">
+    <img class="hero-media" src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1600&auto=format&fit=crop" alt="Abstract code background" width="1600" height="900" fetchpriority="high" decoding="async" />
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <img src="https://avatars.githubusercontent.com/u/37948611?v=4" alt="Portrait of Ali Darehshori" class="profile mb-4" width="188" height="188" loading="lazy" />
+      <h1 class="font-bold mb-2">Ali Darehshori</h1>
+      <p id="typing" class="typing mb-4" aria-live="polite"></p>
+      <p class="text-sm sm:text-base mb-6 max-w-2xl">Crafting scalable systems with .NET & Open-Source spirit 🐧</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="#contact" class="btn-neon">Let's Create Something Epic</a>
+        <button id="copy-mail" class="btn-neon"><i class="fa-regular fa-copy mr-2"></i>Copy Email</button>
+        <button id="open-cmdk" class="btn-neon" title="Ctrl/Cmd + K">Command Palette</button>
+      </div>
+      <div class="mt-8 marquee">
+        <div class="marquee-track">
+          <span class="badge"><i class="devicon-csharp-plain"></i> C# / .NET</span>
+          <span class="badge"><i class="devicon-docker-plain"></i> Docker</span>
+          <span class="badge"><i class="devicon-linux-plain"></i> Linux</span>
+          <span class="badge"><i class="devicon-nginx-original"></i> Nginx</span>
+          <span class="badge"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+          <span class="badge"><i class="fa-solid fa-shield-halved"></i> Security</span>
+          <span class="badge"><i class="devicon-rabbitmq-original"></i> RabbitMQ</span>
+          <!-- duplicated loop for continuous scroll -->
+          <span class="badge"><i class="devicon-csharp-plain"></i> C# / .NET</span>
+          <span class="badge"><i class="devicon-docker-plain"></i> Docker</span>
+          <span class="badge"><i class="devicon-linux-plain"></i> Linux</span>
+          <span class="badge"><i class="devicon-nginx-original"></i> Nginx</span>
+          <span class="badge"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
+          <span class="badge"><i class="fa-solid fa-shield-halved"></i> Security</span>
+          <span class="badge"><i class="devicon-rabbitmq-original"></i> RabbitMQ</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- DEV CONSOLE -->
+  <section class="section" id="console" aria-label="Developer Console">
+    <div class="terminal reveal">
+      <div class="bar"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span><span class="ml-2 text-sm text-gray-300">ali@portfolio: ~</span></div>
+      <div class="body" id="terminal-body" aria-live="polite">
+        <div><span class="prompt">$</span> git clone https://github.com/ali80da/secure-server-communication-over-ssl-in-docker</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack" class="section" aria-label="Tech Stack">
+    <h2 class="section-title">Tech Stack</h2>
+    <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-4 text-center mt-4">
+      <div class="card reveal"><i class="devicon-csharp-plain stack-icon"></i><div>C#</div></div>
+      <div class="card reveal"><i class="devicon-dotnetcore-plain stack-icon"></i><div>.NET 8</div></div>
+      <div class="card reveal"><i class="devicon-docker-plain stack-icon"></i><div>Docker</div></div>
+      <div class="card reveal"><i class="devicon-nginx-original stack-icon"></i><div>Nginx</div></div>
+      <div class="card reveal"><i class="devicon-postgresql-plain stack-icon"></i><div>PostgreSQL</div></div>
+      <div class="card reveal"><i class="devicon-microsoftsqlserver-plain stack-icon"></i><div>SQL Server</div></div>
+      <div class="card reveal"><i class="devicon-sqlite-plain stack-icon"></i><div>SQLite</div></div>
+      <div class="card reveal"><i class="devicon-linux-plain stack-icon"></i><div>Linux</div></div>
+      <div class="card reveal"><i class="devicon-github-original stack-icon"></i><div>GitHub</div></div>
+      <div class="card reveal"><i class="devicon-githubactions-plain stack-icon"></i><div>Actions</div></div>
+      <div class="card reveal"><i class="devicon-redis-plain stack-icon"></i><div>Redis</div></div>
+      <div class="card reveal"><i class="devicon-rabbitmq-original stack-icon"></i><div>RabbitMQ</div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="card reveal">
+      <p class="text-gray-300 max-w-3xl mx-auto text-center">
+        I'm a software developer obsessed with crafting clean, scalable, and innovative solutions with .NET.
+        I love Linux and open-source 🐧, and specialize in ASP.NET Core, Blazor, and Docker.
+        My mission is to create code that’s not just functional, but extraordinary.
       </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="mb-8">
-      <h2 class="section-title">Skills</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="skill-card">
-          <h3 class="font-semibold text-gray-800">Backend</h3>
-          <p class="text-gray-600">.NET 8, ASP.NET Core, EF Core, RESTful APIs, Clean Architecture</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="font-semibold text-gray-800">Front/Mobile</h3>
-          <p class="text-gray-600">Blazor, .NET MAUI, HTML/JS, Tailwind, MudBlazor</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="font-semibold text-gray-800">DevOps</h3>
-          <p class="text-gray-600">Docker, Nginx, CI/CD, GitHub Actions</p>
-        </div>
-        <div class="skill-card">
-          <h3 class="font-semibold text-gray-800">Database</h3>
-          <p class="text-gray-600">SQL Server, PostgreSQL, SQLite, Dapper</p>
-        </div>
+      <div class="text-center mt-6">
+        <a href="https://www.linkedin.com/in/ali-darehshori" target="_blank" rel="noopener" class="btn-neon">
+          <i class="fa-brands fa-linkedin mr-2"></i>Connect on LinkedIn
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects Section -->
-    <section class="mb-8">
-      <h2 class="section-title">Projects</h2>
-      <div class="grid grid-cols-1 gap-4">
-        <div class="project-card">
-          <h3 class="font-semibold text-gray-800">Secure Server Communication over SSL in Docker</h3>
-          <p class="text-gray-600">Establish secure API-to-client communication using SSL in Docker</p>
-          <a href="https://github.com/ali80da/secure-server-communication-over-ssl-in-docker" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <h3 class="font-semibold text-gray-800">Email Setup with Cloudflare</h3>
-          <p class="text-gray-600">A complete guide to setting up email on cPanel hosts with DNS managed via Cloudflare</p>
-          <a href="https://github.com/ali80da/outlook-email-with-cloudflare" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <h3 class="font-semibold text-gray-800">Dev Tricks</h3>
-          <p class="text-gray-600">Tricks for designing and developing programs with C# and .NET</p>
-          <a href="https://github.com/ali80da/dev-tricks" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <h3 class="font-semibold text-gray-800">Advance Code</h3>
-          <p class="text-gray-600">A project for advanced coding with HTML</p>
-          <a href="https://github.com/ali80da/advance-code" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <h3 class="font-semibold text-gray-800">Customize Scalar</h3>
-          <p class="text-gray-600">Personalizing API usage display in .NET 9.0 and above using Scalar</p>
-          <a href="https://github.com/ali80da/customize-scalar" target="_blank">View on GitHub</a>
-        </div>
+  <!-- SKILLS / CAPABILITIES -->
+  <section id="skills" class="section">
+    <h2 class="section-title">Capabilities</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="card reveal tilt"><h3 class="font-semibold text-white mb-1"><i class="fa-solid fa-server mr-2 text-purple-400"></i>Backend</h3><p class="text-gray-300">.NET 8, ASP.NET Core, EF Core, REST, Clean Architecture</p></div>
+      <div class="card reveal tilt"><h3 class="font-semibold text-white mb-1"><i class="fa-solid fa-mobile-screen-button mr-2 text-purple-400"></i>Front/Mobile</h3><p class="text-gray-300">Blazor, .NET MAUI, HTML/JS, Tailwind, MudBlazor</p></div>
+      <div class="card reveal tilt"><h3 class="font-semibold text-white mb-1"><i class="fa-solid fa-gears mr-2 text-purple-400"></i>DevOps</h3><p class="text-gray-300">Docker, Nginx, CI/CD, GitHub Actions</p></div>
+      <div class="card reveal tilt"><h3 class="font-semibold text-white mb-1"><i class="fa-solid fa-database mr-2 text-purple-400"></i>Database</h3><p class="text-gray-300">SQL Server, PostgreSQL, SQLite, Dapper</p></div>
+      <div class="card reveal tilt"><h3 class="font-semibold text-white mb-1"><i class="fa-solid fa-shield-halved mr-2 text-purple-400"></i>Security</h3><p class="text-gray-300">JWT, SSL/TLS, OWASP practices</p></div>
+      <div class="card reveal tilt"><h3 class="font-semibold text-white mb-1"><i class="fa-solid fa-diagram-project mr-2 text-purple-400"></i>Patterns</h3><p class="text-gray-300">CQRS, Mediator, DI, SOLID</p></div>
+    </div>
+  </section>
+
+  <!-- PROJECTS (filters/search + resilient fallback) -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="card reveal mb-4">
+      <div class="flex flex-col md:flex-row md:items-center gap-3">
+        <input id="project-search" class="search" type="search" placeholder="Search projects (e.g. docker, ssl, blazor)" autocomplete="off" />
+        <div id="project-chips" class="chips mt-2 md:mt-0"></div>
       </div>
-    </section>
+    </div>
+    <div id="project-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" aria-live="polite" aria-busy="true">
+      <article class="card reveal skeleton" style="height:160px"></article>
+      <article class="card reveal skeleton" style="height:160px"></article>
+      <article class="card reveal skeleton" style="height:160px"></article>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section class="mb-8">
-      <h2 class="section-title">Contact Me</h2>
-      <p class="text-gray-700">
-        For collaboration or inquiries, feel free to reach out via the links below:
-      </p>
-      <div class="flex space-x-4 mt-4">
-        <a href="https://github.com/ali80da" target="_blank" class="contact-link">GitHub</a>
-        <a href="https://www.linkedin.com/in/ali-darehshori" target="_blank" class="contact-link">LinkedIn</a>
+  <!-- CODE SHOWCASE -->
+  <section id="code" class="section" aria-label="Code Showcase">
+    <h2 class="section-title">Code I Love to Write</h2>
+    <div class="code-card reveal">
+      <div class="code-header">
+        <div class="code-tabs" role="tablist" aria-label="Code tabs">
+          <button class="code-tab" role="tab" aria-selected="true" data-code="csharp">C#</button>
+          <button class="code-tab" role="tab" aria-selected="false" data-code="docker">Dockerfile</button>
+          <button class="code-tab" role="tab" aria-selected="false" data-code="ci">GitHub Actions</button>
+        </div>
+        <button class="copy-btn" id="copy-code">Copy</button>
       </div>
-    </section>
+      <pre><code id="code-csharp">
+<span class="token.keyword">var</span> builder = WebApplication<span class="token.punctuation">.</span>CreateBuilder(args);
+builder<span class="token.punctuation">.</span>Services<span class="token.punctuation">.</span>AddEndpointsApiExplorer();
+builder<span class="token.punctuation">.</span>Services<span class="token.punctuation">.</span>AddSwaggerGen();
+<span class="token.keyword">var</span> app = builder<span class="token.punctuation">.</span>Build();
+app<span class="token.punctuation">.</span>MapGet(<span class="token.str">"/health"</span>, () =&gt; Results<span class="token.punctuation">.</span>Ok(<span class="token.keyword">new</span> { status = <span class="token.str">"ok"</span>, version = <span class="token.str">"1.0.0"</span> }));
+app<span class="token.punctuation">.</span>Run();
+</code></pre>
+      <pre hidden><code id="code-docker">
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+WORKDIR /app
+EXPOSE 8080
 
-    <!-- Footer -->
-    <footer class="text-center text-gray-500 mt-8">
-      <p>🎉 Let's make the software world better together! 🎉</p>
-      <p>© 2025 Ali Darehshori</p>
-    </footer>
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /src
+COPY . .
+RUN dotnet publish -c Release -o /out
+
+FROM base AS final
+WORKDIR /app
+COPY --from=build /out .
+ENTRYPOINT [<span class="token.str">"dotnet"</span>, <span class="token.str">"App.dll"</span>]
+</code></pre>
+      <pre hidden><code id="code-ci">
+name: CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: <span class="token.str">'8.0.x'</span>
+      - run: dotnet restore
+      - run: dotnet build --configuration Release --no-restore
+      - run: dotnet test --no-build --verbosity normal
+</code></pre>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+      <div class="card reveal">
+        <h3 class="font-semibold mb-2">Highlights</h3>
+        <ul class="timeline">
+          <li class="tl-item"><strong>Secure APIs:</strong> End-to-end SSL/TLS, JWT, hardening Nginx</li>
+          <li class="tl-item"><strong>Cloud-ready:</strong> Dockerized services, GitHub Actions CI/CD</li>
+          <li class="tl-item"><strong>Data-driven:</strong> EF Core, Dapper، Postgres/SQL Server</li>
+        </ul>
+      </div>
+      <div class="card reveal">
+        <h3 class="font-semibold mb-2">CLI Quickstart</h3>
+        <pre><code>$ git clone https://github.com/ali80da/dev-tricks
+$ cd dev-tricks
+$ dotnet run</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="cases" class="section">
+    <h2 class="section-title">Case Studies</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <details class="card reveal">
+        <summary class="cursor-pointer font-semibold">SSL in Dockerized APIs</summary>
+        <div class="mt-3 text-gray-300">
+          <p><strong>Problem:</strong> Insecure API comms across containers.</p>
+          <p><strong>Approach:</strong> Self-signed dev CA, Nginx reverse proxy, strict TLS ciphers.</p>
+          <p><strong>Impact:</strong> A+ on SSL Labs, zero mixed-content issues.</p>
+          <a class="btn-neon mt-3 inline-block" href="https://github.com/ali80da/secure-server-communication-over-ssl-in-docker" target="_blank" rel="noopener">Read More</a>
+        </div>
+      </details>
+      <details class="card reveal">
+        <summary class="cursor-pointer font-semibold">Email with Cloudflare DNS</summary>
+        <div class="mt-3 text-gray-300">
+          <p><strong>Problem:</strong> Misconfigured MX/SPF/DMARC.</p>
+          <p><strong>Approach:</strong> Clear DNS templates, validation with mail-tester.</p>
+          <p><strong>Impact:</strong> Inbox delivery ↑, bounce rate ↓.</p>
+          <a class="btn-neon mt-3 inline-block" href="https://github.com/ali80da/outlook-email-with-cloudflare" target="_blank" rel="noopener">Read More</a>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS / METRICS -->
+  <section id="achievements" class="section">
+    <h2 class="section-title">Achievements</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="card reveal"><div class="counter" data-target="9" id="metric-repos">0</div><div class="counter-sub">Open-source Projects</div></div>
+      <div class="card reveal"><div class="counter" data-target="6" id="metric-techs">0</div><div class="counter-sub">Core Tech Domains</div></div>
+      <div class="card reveal"><div class="counter" data-target="42" id="metric-stars">0</div><div class="counter-sub">GitHub Stars (approx)</div></div>
+      <div class="card reveal"><div class="counter" data-target="100" id="metric-uptime">0</div><div class="counter-sub">% Production Uptime</div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="card reveal text-center">
+      <p class="text-gray-300 max-w-2xl mx-auto">Ready to build something extraordinary? Let's collaborate on your next big project!</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-6">
+        <a href="https://github.com/ali80da" target="_blank" rel="noopener" class="btn-neon"><i class="fa-brands fa-github mr-2"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/ali-darehshori" target="_blank" rel="noopener" class="btn-neon"><i class="fa-brands fa-linkedin mr-2"></i>LinkedIn</a>
+        <a href="mailto:ali80darehshori@outlook.com" class="btn-neon"><i class="fa-regular fa-envelope mr-2"></i>Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12" aria-label="Footer">
+    <div class="max-w-7xl mx-auto text-center">
+      <div class="space-x-4 mb-4">
+        <a href="https://github.com/ali80da" target="_blank" rel="noopener" aria-label="GitHub profile" class="text-gray-300 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+        <a href="https://www.linkedin.com/in/ali-darehshori" target="_blank" rel="noopener" aria-label="LinkedIn profile" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+      </div>
+      <p class="text-base">🎉 Let's code the future together! 🎉</p>
+      <p class="text-xs mt-2 text-gray-400">© <span id="year"></span> Ali Darehshori. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Command Palette -->
+  <div class="cmdk" id="cmdk" aria-hidden="true">
+    <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Command Palette">
+      <input id="cmdk-search" class="cmdk-search" type="search" placeholder="Type to search (e.g. projects, contact, github) — Esc to close" />
+      <div class="cmdk-list" id="cmdk-list"></div>
+    </div>
   </div>
+
+  <!-- JSON-LD SoftwareDeveloper -->
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"SoftwareDeveloper","name":"Ali Darehshori","url":"https://github.com/ali80da","knowsAbout":[".NET","C#","Docker","Nginx","PostgreSQL","CI/CD"],"sameAs":["https://github.com/ali80da","https://www.linkedin.com/in/ali-darehshori"]}
+  </script>
+
+  <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+  <script>
+  (async function(){
+    const $=(s,a=false)=>a?document.querySelectorAll(s):document.querySelector(s);
+
+    // Year
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // Smooth anchor
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');
+      if(id.length>1){ e.preventDefault(); document.querySelector(id).scrollIntoView({behavior:'smooth',block:'start'}); }
+    }));
+
+    // Mobile nav toggle
+    const menuBtn=document.getElementById('navbar-toggle');
+    const menu=document.getElementById('navbar-menu');
+    const firstLink=menu.querySelector('a');
+    const toggleMenu=(open)=>{ menuBtn.setAttribute('aria-expanded',String(open)); menu.classList.toggle('hidden',!open); if(open) firstLink&&firstLink.focus(); };
+    menuBtn.addEventListener('click',()=>toggleMenu(menu.classList.contains('hidden')));
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') toggleMenu(false); });
+
+    // Typing effect
+    const typingEl=document.getElementById('typing');
+    const phrases=['Backend .NET Engineer','Clean Architecture Advocate','Docker-first DevOps','Blazor & MAUI Lover','Open-Source on Linux 🐧'];
+    let pi=0,ci=0,del=false; const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const type=()=>{
+      if(reduced){ typingEl.textContent=phrases[pi]; return; }
+      const p=phrases[pi];
+      typingEl.textContent=p.substring(0,ci);
+      if(!del && ci<=p.length){ ci++; setTimeout(type,70+Math.random()*40); }
+      else if(del && ci>0){ ci--; setTimeout(type,35); }
+      else if(!del && ci===p.length){ del=true; setTimeout(type,1000); }
+      else if(del && ci===0){ del=false; pi=(pi+1)%phrases.length; setTimeout(type,220); }
+    };
+    type();
+
+    // Scroll handlers
+    const progress=$('.scroll-progress'); const backToTop=$('.back-to-top'); const navbar=document.querySelector('.navbar');
+    const spyLinks=Array.from(document.querySelectorAll('[data-spy]')); const sections=spyLinks.map(a=>document.querySelector(a.getAttribute('href')));
+    const onScroll=()=>{
+      const st=window.scrollY||window.pageYOffset; const sh=document.documentElement.scrollHeight-window.innerHeight;
+      progress.style.width=Math.min(100,(st/sh)*100)+'%';
+      navbar.classList.toggle('scrolled',st>50);
+      backToTop.style.display=st>420?'inline-flex':'none';
+      let current=0;
+      for(let i=0;i<sections.length;i++){ const r=sections[i].getBoundingClientRect(); if(r.top<=120) current=i; else break; }
+      spyLinks.forEach((a,idx)=>a.setAttribute('aria-current', idx===current?'true':'false'));
+    };
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+    backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+    // Reveal with fallback
+    const reveals=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      const io=new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} }),{threshold:.18});
+      reveals.forEach(el=>io.observe(el));
+    } else { reveals.forEach(el=>el.classList.add('visible')); }
+
+    // Toast
+    const toastWrap=document.createElement('div'); toastWrap.className='fixed left-1/2 transform -translate-x-1/2 bottom-6 z-50'; document.body.appendChild(toastWrap);
+    const toast=(t)=>{ const n=document.createElement('div'); n.className='card px-4 py-2 bg-black bg-opacity-60'; n.textContent=t; toastWrap.appendChild(n); setTimeout(()=>n.remove(), 1800); };
+    document.getElementById('copy-mail').addEventListener('click',async()=>{
+      try{ await navigator.clipboard.writeText('ali80darehshori@outlook.com'); toast('Email copied ✨'); }catch{ toast('Could not copy'); }
+    });
+
+    // DEV CONSOLE animation
+    const term = document.getElementById('terminal-body');
+    const lines = [
+      '$ git clone https://github.com/ali80da/secure-server-communication-over-ssl-in-docker',
+      '$ cd secure-server-communication-over-ssl-in-docker',
+      '$ docker build -t api:secure .',
+      '$ docker run -p 8080:8080 api:secure',
+      '$ curl -s https://localhost:8080/health',
+      '{"status":"ok","version":"1.0.0"}'
+    ];
+    if(!reduced){
+      let li=1, ci2=0; let current = document.createElement('div'); current.innerHTML = '<span class="prompt">$</span> ';
+      term.appendChild(current);
+      function tick(){
+        if(li>=lines.length){ return; }
+        const target = lines[li];
+        current.innerHTML = (li<=4?'<span class="prompt">$</span> ':'') + target.substring(0, ci2++);
+        if(ci2>target.length){ term.appendChild(document.createElement('div')); current = term.lastChild; li++; ci2=0; }
+        setTimeout(tick, 18 + Math.random()*32);
+      }
+      setTimeout(tick, 600);
+    } else { lines.slice(1).forEach(l=>{ const d=document.createElement('div'); d.textContent=l; term.appendChild(d); }); }
+
+    // Projects: strong fallbacks (cache -> local file -> API -> embedded)
+    const grid = document.getElementById('project-grid');
+    const cacheKey = 'ali-gh-projects-v5';
+    const embedded = [
+      { name:'secure-server-communication-over-ssl-in-docker', html_url:'https://github.com/ali80da/secure-server-communication-over-ssl-in-docker', description:'Implement secure API-to-client communication with SSL in Dockerized environments.', tags:['docker','ssl','nginx','security'] },
+      { name:'outlook-email-with-cloudflare', html_url:'https://github.com/ali80da/outlook-email-with-cloudflare', description:'Guide for email on cPanel with Cloudflare DNS management.', tags:['dns','email','cloudflare'] },
+      { name:'dev-tricks', html_url:'https://github.com/ali80da/dev-tricks', description:'Tips for designing and developing with C# and .NET.', tags:['csharp','.net','tips'] },
+      { name:'advance-code', html_url:'https://github.com/ali80da/advance-code', description:'Advanced HTML coding projects for modern web.', tags:['html','frontend'] },
+      { name:'customize-scalar', html_url:'https://github.com/ali80da/customize-scalar', description:'Personalizing API usage display in .NET 9.0+ using Scalar.', tags:['.net','api','tools'] }
+    ];
+    const chipsWrap = document.getElementById('project-chips');
+    const searchInput = document.getElementById('project-search');
+    let activeTags = new Set();
+    let currentRepos = embedded;
+
+    const render = (repos) => {
+      grid.innerHTML = '';
+      if(!repos || repos.length===0){
+        const empty = document.createElement('div'); empty.className='card reveal'; empty.textContent='No projects match your filter.'; grid.appendChild(empty);
+      } else {
+        repos.forEach(r => {
+          const tags = (r.tags||[]).map(t=>`<span class="chip">${t}</span>`).join(' ');
+          const a = document.createElement('article');
+          a.className = 'card reveal tilt';
+          a.innerHTML = `<h3 class="font-semibold text-white text-lg">${r.name}</h3>
+            <p class="text-gray-300 mb-4">${(r.description||'').slice(0,180)}</p>
+            <div class="mb-3">${tags}</div>
+            <div class="flex items-center"><a class="btn-neon" href="${r.html_url}" target="_blank" rel="noopener">Explore</a></div>`;
+          grid.appendChild(a);
+        });
+      }
+      grid.setAttribute('aria-busy','false');
+    };
+
+    function unify(repos){
+      // attach tags from embedded when missing
+      return repos.map(r=>({ ...r, tags: r.tags || (embedded.find(e=>e.name===r.name)?.tags) || [] }));
+    }
+
+    function buildChips(all){
+      const set = new Set();
+      all.forEach(r => (r.tags||[]).forEach(t=>set.add(t)));
+      chipsWrap.innerHTML='';
+      Array.from(set).sort().forEach(t=>{
+        const c = document.createElement('button'); c.className='chip'; c.textContent=t; c.dataset.tag=t;
+        c.addEventListener('click',()=>{ if(activeTags.has(t)) activeTags.delete(t); else activeTags.add(t); c.classList.toggle('active'); applyFilters(); });
+        chipsWrap.appendChild(c);
+      });
+    }
+
+    function applyFilters(){
+      let list = [...currentRepos];
+      const q = (searchInput.value||'').toLowerCase();
+      if(q) list = list.filter(r=> (r.name+' '+(r.description||'')+' '+(r.tags||[]).join(' ')).toLowerCase().includes(q) );
+      if(activeTags.size>0) list = list.filter(r=>(r.tags||[]).some(t=>activeTags.has(t)));
+      render(list);
+    }
+
+    try {
+      const cached = localStorage.getItem(cacheKey);
+      if (cached) { currentRepos = unify(JSON.parse(cached)); render(currentRepos); }
+
+      const tryFetch = async (path) => { try { const res = await fetch(path, {cache:'no-store'}); return res.ok ? await res.json() : null; } catch { return null; } };
+
+      let repos = await tryFetch('./repos.json'); if (!repos) repos = await tryFetch('repos.json');
+
+      if (!repos) {
+        try {
+          const res = await fetch('https://api.github.com/users/ali80da/repos?sort=updated&per_page=20', {headers:{'Accept':'application/vnd.github+json'}});
+          if (res.ok) { const data = await res.json(); repos = data.filter(r => !r.fork).slice(0, 12); }
+        } catch {}
+      }
+
+      if (!repos || !Array.isArray(repos) || repos.length === 0) { repos = embedded; }
+
+      currentRepos = unify(repos);
+      localStorage.setItem(cacheKey, JSON.stringify(currentRepos));
+      render(currentRepos);
+    } catch {
+      currentRepos = embedded; render(currentRepos);
+    }
+
+    buildChips(currentRepos);
+    searchInput.addEventListener('input', applyFilters);
+
+    // Counters animation (Achievements)
+    const counters = document.querySelectorAll('.counter');
+    const animateNum = (el) => {
+      const target = +el.getAttribute('data-target'); let cur = 0; const step = Math.max(1, Math.floor(target/60));
+      const tick = () => { cur += step; if(cur >= target){ el.textContent = target; } else { el.textContent = cur; requestAnimationFrame(tick); } };
+      requestAnimationFrame(tick);
+    };
+    if('IntersectionObserver' in window){
+      const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ animateNum(e.target); io.unobserve(e.target); } }));
+      counters.forEach(c=>io.observe(c));
+    } else { counters.forEach(animateNum); }
+
+    // TILT hover
+    const cards=document.querySelectorAll('.tilt');
+    const tilt=(e,el)=>{ const r=el.getBoundingClientRect(); const cx=r.left+r.width/2; const cy=r.top+r.height/2; const dx=(e.clientX-cx)/r.width; const dy=(e.clientY-cy)/r.height; el.style.transform=`rotateX(${(-dy*6).toFixed(2)}deg) rotateY(${(dx*8).toFixed(2)}deg)`; };
+    const reset=(el)=>{ el.style.transform='rotateX(0) rotateY(0)'; };
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      cards.forEach(el=>{ el.addEventListener('mousemove', e=>tilt(e,el)); el.addEventListener('mouseleave', ()=>reset(el)); });
+    }
+
+    // Code tabs + copy
+    const tabs = document.querySelectorAll('.code-tab');
+    const blocks = { csharp: document.getElementById('code-csharp').parentElement, docker: document.getElementById('code-docker').parentElement, ci: document.getElementById('code-ci').parentElement };
+    tabs.forEach(t=>t.addEventListener('click', ()=>{
+      tabs.forEach(x=>x.setAttribute('aria-selected','false'));
+      t.setAttribute('aria-selected','true');
+      Object.values(blocks).forEach(b=> b.hidden = true);
+      blocks[t.dataset.code].hidden = false;
+    }));
+    document.getElementById('copy-code').addEventListener('click', async()=>{
+      const active = Array.from(tabs).find(x=>x.getAttribute('aria-selected')==='true').dataset.code;
+      const text = blocks[active].innerText;
+      try{ await navigator.clipboard.writeText(text); toast('Code copied ⚡'); }catch{ toast('Copy failed'); }
+    });
+
+    // PARTICLE FX Canvas (GPU-friendly)
+    const canvas=document.getElementById('fx-canvas');
+    if(canvas && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const dpr=Math.min(window.devicePixelRatio||1, 2);
+      const ctx=canvas.getContext('2d');
+      const resize=()=>{ canvas.width=innerWidth*dpr; canvas.height=innerHeight*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); };
+      resize(); addEventListener('resize', resize);
+      const particles=Array.from({length: 90}, ()=>({ x: Math.random()*innerWidth, y: Math.random()*innerHeight, r: Math.random()*1.6+0.4, vx:(Math.random()-.5)*.25, vy:(Math.random()-.5)*.25 }));
+      function loop(){
+        ctx.clearRect(0,0,innerWidth,innerHeight); ctx.globalCompositeOperation='lighter';
+        for(const p of particles){
+          p.x+=p.vx; p.y+=p.vy; if(p.x<0||p.x>innerWidth) p.vx*=-1; if(p.y<0||p.y>innerHeight) p.vy*=-1;
+          const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*6); g.addColorStop(0,'rgba(124,58,237,.6)'); g.addColorStop(1,'rgba(34,211,238,0)');
+          ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,p.r*4,0,Math.PI*2); ctx.fill();
+        }
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+
+    // Command Palette (Ctrl/Cmd + K)
+    const cmdk = document.getElementById('cmdk');
+    const cmdkSearch = document.getElementById('cmdk-search');
+    const cmdkList = document.getElementById('cmdk-list');
+    const openCmdk = () => { cmdk.classList.add('open'); cmdk.setAttribute('aria-hidden','false'); cmdkSearch.value=''; buildCmdk(''); cmdkSearch.focus(); }
+    const closeCmdk = () => { cmdk.classList.remove('open'); cmdk.setAttribute('aria-hidden','true'); }
+    document.getElementById('open-cmdk').addEventListener('click', openCmdk);
+    document.addEventListener('keydown',(e)=>{
+      const k = (e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k';
+      if(k){ e.preventDefault(); openCmdk(); }
+      if(e.key==='Escape'){ closeCmdk(); }
+    });
+    cmdk.addEventListener('click',(e)=>{ if(e.target===cmdk) closeCmdk(); });
+
+    const actions = [
+      { title:'Open GitHub', hint:'ali80da', run:()=>window.open('https://github.com/ali80da','_blank') },
+      { title:'Contact: Email', hint:'ali80darehshori@outlook.com', run:()=>{ navigator.clipboard.writeText('ali.darehshori@gmail.com'); toast('Email copied ✨'); } },
+      { title:'Go to Projects', hint:'#projects', run:()=>{ closeCmdk(); document.querySelector('#projects').scrollIntoView({behavior:'smooth'}); } },
+      { title:'Go to Contact', hint:'#contact', run:()=>{ closeCmdk(); document.querySelector('#contact').scrollIntoView({behavior:'smooth'}); } },
+      { title:'Filter: docker', hint:'projects', run:()=>{ closeCmdk(); activeTags=new Set(['docker']); applyFilters(); document.querySelector('#projects').scrollIntoView({behavior:'smooth'}); } },
+      { title:'Filter: .net', hint:'projects', run:()=>{ closeCmdk(); activeTags=new Set(['.net']); applyFilters(); document.querySelector('#projects').scrollIntoView({behavior:'smooth'}); } },
+    ];
+    function buildCmdk(q){
+      cmdkList.innerHTML='';
+      const rows = actions.filter(a => (a.title+' '+a.hint).toLowerCase().includes(q.toLowerCase()));
+      rows.forEach(a=>{
+        const li=document.createElement('div'); li.className='cmdk-item';
+        li.innerHTML = `<span>${a.title}</span><span class="text-xs text-gray-400">${a.hint}</span>`;
+        li.addEventListener('click', a.run);
+        cmdkList.appendChild(li);
+      });
+      if(rows.length===0){ const empty=document.createElement('div'); empty.className='cmdk-item'; empty.innerHTML='<span>No results</span>'; cmdkList.appendChild(empty); }
+    }
+    cmdkSearch.addEventListener('input', (e)=>buildCmdk(e.target.value));
+  })();
+  </script>
 </body>
 </html>
