@@ -1,0 +1,27 @@
+[
+  {
+    "name": "secure-server-communication-over-ssl-in-docker",
+    "html_url": "https://github.com/ali80da/secure-server-communication-over-ssl-in-docker",
+    "description": "Implement secure API-to-client communication with SSL in Dockerized environments."
+  },
+  {
+    "name": "outlook-email-with-cloudflare",
+    "html_url": "https://github.com/ali80da/outlook-email-with-cloudflare",
+    "description": "Guide for email on cPanel with Cloudflare DNS management."
+  },
+  {
+    "name": "dev-tricks",
+    "html_url": "https://github.com/ali80da/dev-tricks",
+    "description": "Tips for designing and developing with C# and .NET."
+  },
+  {
+    "name": "advance-code",
+    "html_url": "https://github.com/ali80da/advance-code",
+    "description": "Advanced HTML coding projects for modern web."
+  },
+  {
+    "name": "customize-scalar",
+    "html_url": "https://github.com/ali80da/customize-scalar",
+    "description": "Personalizing API usage display in .NET 9.0+ using Scalar."
+  }
+]
